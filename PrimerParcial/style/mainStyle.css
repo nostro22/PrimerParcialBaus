@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;1,100;1,300;1,400&family=Permanent+Marker&display=swap');
+
+html,
+body {
+    display: flex;
+    font-family: 'Lato';
+    height: 100%;
+    flex-direction: column;  
+}
+.card-body{
+    display: flex;
+    font-size: small;
+    margin-top: 15px;
+}
+.botonAnuncio{
+    background-color: #017fe5;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+body{
+    background-image: url("../img/fondolindo.jpg");
+    object-fit: fill;
+    height: 100vh;
+    width: 100vw;
+}
+div h2 {
+    
+    color: white;
+    margin: 1rem;
+    visibility: visible;
+    font-size: xx-large;
+}
+
+form{
+    visibility: hidden;
+    height: 0%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    text-align: center;
+}
+
+fieldset {
+    padding: 5%;
+}
+
+#frm_altaAnuncios {
+    width: 80%;
+    min-width: 2rem;   
+    margin: auto;
+    text-align: left;
+    font-family: 'Lato';
+}
+
+fieldset {
+    background-color: white;
+}
+
+.input label {
+    display: block;
+}
+
+.caracteristicas {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.input_caracteristicas {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+
+@media (max-width: 600px) {
+
+    .caracteristicas {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 200px;
+
+    }
+    .input {
+        width: 185px;
+        min-height: 1rem;
+    }
+    fieldset{
+        width: 200px;
+    }
+    h1{
+        font-size: small;
+        width: 200px;  
+        margin-left: 50px;   
+
+    }
+}
+
+.input_element {
+    display: flex;
+    align-items: center;
+    height: 2vw;
+    margin: 0 1rem 0 1rem;
+}
+
+div input {
+    min-width: 6rem;
+    overflow-x: hidden;
+}
+.input_element :hover {
+    cursor: text;
+}
+
+.radio input, .radio label{    
+    width: 2rem;
+    display:inline-block; 
+    margin:0 50px 0 0px; 
+}
+input {
+    width: 100%;
+    border-radius: 0.8em;
+    background-color: gainsboro;
+    border: none;
+    min-height: 1rem;
+}
+.botones{
+    margin-top: 10px;
+}
+
+#listado {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    color: white;
+    font-family: 'Lato';
+    font-weight: 700;
+    border: none;
+    border-radius: 1em;
+}
+
+button:active {
+    filter: brightness(80%);
+}
+
+#btn_form {
+
+    background-color: limegreen;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+button div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#btn_eliminar {
+    background-color: crimson;
+}
+
+#btn_cancelar {
+    background-color: dodgerblue;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+tr:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+#spinner {
+    margin: auto;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0%;
+    width: 0%;
+}
+
+thead {
+    background-color: lightseagreen;
+}
+
+.colorPar {
+    background-color: lightseagreen;
+}
+
+.colorImpar {
+    background-color: lightblue;
+}
+
+/*
+header
+*/
+
+
+nav {
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#derechos{
+    justify-self: auto;
+    color: white;
+    font-size: small;
+}
+
+#logoBox {
+    background-color: aqua;
+    height: 40%;
+}
+
+#logoBox>img {
+    height: 100%;
+}
+
+
+
+#titleBox {
+    height: 30%;
+    background-color: red;
+}
+
+#titleBox p {
+    font-size: 100%;
+    margin: 0;
+}
+
+#box3 {
+    height: 30%;
+
+    background-color: aqua;
+}
+
+.middle-column {
+    flex-direction: column;
+    height: 10vh;
+    width: 10vw;
+
+}
+
+nav div {
+    width: 25vw;
+    max-width: 200px;   
+}
+
+
+ul {
+    list-style: none;
+}
+
+nav>ul {
+    display: flex;
+    flex-direction: column;
+
+}
+
+p {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    width: 10vw;
+    height: 4rem;
+    font-size: small;
+    max-width: 100px;
+    max-height: 20px;
+    border: aquamarine;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a:hover {
+    color: #017fe5;
+    background-color: rgb(141, 201, 181);
+    text-decoration: none;
+}
+
+
+.fotoRelacionada_container {
+   height: 300px;
+   margin-bottom: 25px;
+   visibility: hidden;
+}
+.fotoRelacionada_container img{
+    width:100%;
+    object-fit:cover;
+    height: 100%;    
+}
+
+footer{
+    margin-top: 25px;
+    visibility: hidden;
+    height: 0%;
+}
+footer nav  ul{
+    display: flex;
+    flex-direction: column;
+}
+
+#titulo{
+margin: 25px 0 25px;
+visibility: hidden;
+}
+/*
+header end
+*/
+
+i{
+    margin: 0 1rem 0 1rem;
+}
+
+#anunciosDinamicos{
+    width: 80%;
+    height: 80%;
+    background-color: #017fe5;
+    margin: auto;
+    margin-top: 20px;
+    visibility: visible;
+}
+
+.anuncio{
+    width: 50%;
+    margin-top: 20px;
+    background-color: aqua;
+}

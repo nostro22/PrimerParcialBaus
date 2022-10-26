@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="./scripts/index.js" type="module" defer></script>
+    <title>Primer Parcial tema 7</title>
+</head>
+
+<body>
+    
+    <main>
+        <header>
+            <nav>
+                <div class="middle-column">
+                    <div id="logoBox">
+                        <img src="./img/logo.png" alt="logo">
+                    </div>
+                    <div id="titleBox">
+                        <p>Pets®</p>
+                    </div>
+                    <div id="box3">
+                        <span>(Mascotas que dan gusto)</span>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><a href="">Administracion</a></li>
+                    <li><a href="./index.html">Anuncios</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="anunciosDinamicos">
+        </div>
+
+        <h1 id="titulo">Administracion</h1>
+
+        <div class="fotoRelacionada_container">
+            <img src="./img/perro.jpg" alt="fotoRelacionada">
+        </div>
+
+        <form id="frm_altaAnuncios">
+            <fieldset>
+                <legend>Información Del Anuncio</legend>
+                <div class="input">
+                    <label for="txt_titulo">Título:</label>
+                    <input type="text" id="txt_titulo" name="titulo" placeholder="Título" required>
+                    <small></small>
+                </div>
+                <div class="input">
+                    <label>Animal:</label>
+                    <div class="radio">
+                        <label for="rdo_perro">Perro:</label>
+                        <input type="radio" name="transaccion" id="rdo_perro" value="perro" required>
+                        <label for="rdo_gato">Gato:</label>
+                        <input type="radio" name="transaccion" id="rdo_gato" value="gato" required>
+                        <small></small>
+
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="txt_descripcion">Descripcion:</label>
+                    <input type="text" id="txt_descripcion" name="descripcion" placeholder="Descripcion" required>
+                    <small></small>
+                </div>
+                <div class="input">
+                    <label for="txt_precio">Precio</label>
+                    <input type="number" name="precio" min="0" max="5000" id="txt_precio" placeholder="Precio" required>
+                    <small></small>
+                </div>
+
+                <div class="caracteristicas">
+                    <div class="input_caracteristicas">
+                        <label class="input_element" for="txt_raza"><i class="material-icons">pets</i></label>
+                        <input class="input_element" type="text" name="raza" id="txt_raza" placeholder="Raza"
+                            required>
+                        <small></small>
+                    </div>
+                    <div class="input_caracteristicas">
+                        <label class="input_element" for="txt_fecha"><i
+                                class="material-icons">cruelty_free</i></label>
+                        <input class="input_element" type="date" name="fecha" id="txt_fecha" placeholder="dd/mm/aaaa" required>
+                        <small></small>
+                    </div>
+                    <div class="input_caracteristicas">
+                        <label class="input_element correcto" for="txt_vacuna"><i class="material-icons">vaccines</i></label>
+                        <select class="input_element" name="vacunas" id="txt_vacuna" placeholder="---Elegir--" required>
+                            <option value="si">SI</option>
+                            <option value="no">NO</option>
+                        </select>
+                        <small></small>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="botones">
+                <button class="alta" type="submit" id="btn_form" name="btn_editar">
+                    <div>
+                        <i class="material-icons">save</i>
+                        <span>Guardar</span>
+                    </div>
+                </button>
+                <button type="reset" id="btn_reset" name="btn_reset">
+                    <div>
+                        <i class="material-icons">brush</i>
+                        <span>Limpiar</span>
+                    </div>
+                </button>
+                <button type="button" class="hidden" id="btn_eliminar" name="btn_eliminar">
+                    <div>
+                        <i class="material-icons">delete</i>
+                        <span>Eliminar</span>
+                    </div>
+                </button>
+                <button type="button" class="hidden" id="btn_cancelar" name="btn_cancelar">
+                    <div>
+                        <i class="material-icons">clear</i>
+                        <span>Cancelar</span>
+                    </div>
+                </button>
+
+                <img src="./assets/spinner.svg" id="spinner">
+            </div>
+            <span class="anuncio hidden"></span>
+            <div id="listado">
+            </div>
+        </form>
+    </main>
+  
+    <div>
+        <h2>Venta y adopcion de Mascotas</h2>
+    </div>
+    <footer>
+        <nav>
+            <ul id="footerNav">
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Anuncios</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+            <span id="derechos">Todos los Derechos Reservados 2022 ©</span>
+        </nav>
+    </footer>
+</body>
+
+</html>
