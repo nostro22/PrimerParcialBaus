@@ -1,17 +1,15 @@
 import crearTabla from "./tablaDinamica.js";
 import Anuncio_Mascota from "./entidades/Anuncio_Mascota.js";
 import imprimirAnuncios from "./anunciosDinamicos.js";
+
 import {
     validarCampoVacio,
-    //  validarPrecio,
-} from "./entidades/validaciones.js";
-import {
-    // validarCampoVacio,
     validarPrecio,
+    validarLongitudMaxima
 } from "./entidades/validaciones.js";
 
 
-const listado = JSON.parse(localStorage.getItem("Elementos")) || [new Anuncio_Mascota(0, 0, 0, 0, 0, 0, 0, 0, 0)];
+const listado = JSON.parse(localStorage.getItem("Elementos")) || [];
 const $tableContainer = document.getElementById("listado");
 const $form = document.forms[0];
 const $nav = document.getElementsByTagName("nav");
@@ -23,16 +21,16 @@ const{titulo,transaccion,descripcion, precio , raza , fecha, vacunas }= $form;
 
 let table;
 let _id = -1;
-
-if (listado.length > 0 && document.getElementById("listado")) {
+console.log(listado.length);
+if (listado.length > 0 ) {
 
     actualizarTabla(listado)
         .then(() => $spinner.style.display = "none");
 }
-
-if (document.getElementById("anunciosDinamicos")) {
-    imprimirAnuncios(listado);
+else{
+    $spinner.style.display = "none";
 }
+
 
 
 //Evento submit del formulario
@@ -43,9 +41,9 @@ $form.addEventListener("submit", e => {
     if (btn_editar.classList.contains("alta")) {
 
         if (validarEntrada(form)) {
-            listado.push(new Anuncio_Mascota(Date.now(), form.txt_titulo.value,
-                form.transaccion.value, form.txt_descripcion.value, form.txt_precio.value,
-                form.txt_raza.value, form.txt_fecha.value, form.txt_vacuna.value));
+            listado.push(new Anuncio_Mascota(Date.now(), titulo.value,
+                transaccion.value, descripcion.value, precio.value,
+                raza.value, fecha.value, vacunas.value));
 
             localStorage.setItem("Elementos", JSON.stringify(listado));
             actualizarTabla(listado)
@@ -63,26 +61,26 @@ $form.addEventListener("submit", e => {
             const objeto = listado[buscarPorId(listado, _id)];
             console.log(objeto);
             if (objeto) {
-                if ($form.titulo.value) {
-                    objeto.titulo = $form.titulo.value;
+                if (titulo.value) {
+                    objeto.titulo = titulo.value;
                 }
-                if ($form.transaccion.value) {
-                    objeto.transaccion = $form.transaccion.value;
+                if (transaccion.value) {
+                    objeto.transaccion = transaccion.value;
                 }
-                if ($form.descripcion.value) {
-                    objeto.descripcion = $form.descripcion.value;
+                if (descripcion.value) {
+                    objeto.descripcion = descripcion.value;
                 }
-                if (parseInt($form.precio.value)) {
-                    objeto.precio = $form.precio.value;
+                if (parseInt(precio.value)) {
+                    objeto.precio = precio.value;
                 }
-                if (parseInt($form.txt_raza.value)) {
-                    objeto.raza = $form.txt_raza.value;
+                if (parseInt(raza.value)) {
+                    objeto.raza = raza.value;
                 }
-                if (parseInt($form.txt_fecha.value)) {
-                    objeto.fecha = $form.txt_fecha.value;
+                if (parseInt(fecha.value)) {
+                    objeto.fecha = fecha.value;
                 }
-                if (parseInt($form.txt_vacuna.value)) {
-                    objeto.vacuna = $form.txt_vacuna.value;
+                if (parseInt(vacunas.value)) {
+                    objeto.vacuna = vacunas.value;
                 }
 
                 localStorage.setItem("Elementos", JSON.stringify(listado));
@@ -110,14 +108,14 @@ $form.addEventListener("input", e => {
     console.log(form);
     switch (form.name) {
         case 'titulo':
-            form.addEventListener("blur", validarCampoVacio);
+            form.addEventListener("blur", validarLongitudMaxima);
             break;
         case 'transaccion':
             console.log("transaccion");
             form.addEventListener("blur", validarCampoVacio);
             break;
         case 'descripcion':
-            form.addEventListener("blur", validarCampoVacio);
+            form.addEventListener("blur", validarLongitudMaxima);
 
             console.log("descripcion");
             break;
@@ -204,7 +202,11 @@ function unsetId() {
 }
 
 function buscarPorId(lista, id) {
-    return lista.findIndex(el => el.id == id);
+    if(lista)
+    {
+        return lista.findIndex(el => el.id == id);
+    }
+  
 }
 
 /*

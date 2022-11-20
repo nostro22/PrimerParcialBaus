@@ -6,6 +6,16 @@ body {
     font-family: 'Lato';
     flex-direction: column;  
 }
+.anuncio{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 250px;
+    width: 30%;
+    margin-top: 20px;
+    padding: 25px;
+    background-color: rgb(6, 68, 68);
+}
 .card-text
 {
     color: aliceblue;
@@ -91,6 +101,16 @@ main {
 
 @media (max-width: 600px) {
 
+    
+    .anuncio{
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        max-height: 300px;
+        width: 30%;
+        background-color: rgb(6, 68, 68);
+    }
+    
     #anunciosDinamicos{
         display: flex;
         flex-direction: row;
@@ -134,7 +154,8 @@ main {
         color: aliceblue;
         justify-content: space-evenly;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        flex-wrap: nowrap;
         font-family: 'Courier New', Courier, monospace;
         font-size: 11px;
         margin-top: 15px;
@@ -154,7 +175,6 @@ main {
         margin-top: 15px;
     }
     .botonAnuncio{
-        background-color: #017fe5;
         display: flex;
         margin-top: 25px;
     }
@@ -322,19 +342,10 @@ header end
     width: 80%;
     height: 80%;
     min-width: 600px;
-    background-color: #017fe5;
+    background-color: #017fe5 ;
     margin: auto;
     margin-top: 20px;
     overflow-y: scroll;
 
 }
 
-.anuncio{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 30%;
-    margin-top: 20px;
-    padding: 25px;
-    background-color: rgb(6, 68, 68);
-}

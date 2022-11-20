@@ -1,5 +1,6 @@
-function crearTabla(vec) {
+function crearTabla( vec) {
     const tabla = document.createElement("table");
+console.log(vec);
 
     tabla.appendChild(crearCabecera(vec[0]));
     tabla.appendChild(crearCuerpo(vec));
@@ -29,7 +30,7 @@ function crearCabecera(elemento) {
 function crearCuerpo(vec) {
     const tbody = document.createElement("tbody");
 
-    for (let i = 1; i < vec.length; i++) {
+    for (let i = 0; i < vec.length; i++) {
         const tr = document.createElement("tr");
 
         tr.classList.add(i % 2 == 0 ? "colorPar" : "colorImpar");

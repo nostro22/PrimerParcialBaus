@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">   
+    <link rel="stylesheet" href="./style/adminStyle.css">   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <script src="./scripts/administracion.js" type="module" defer></script>
@@ -52,47 +52,48 @@
                 <legend>Información Del Anuncio</legend>
                 <div class="input">
                     <label for="txt_titulo">Título:</label>
-                    <input type="text" id="txt_titulo" name="titulo" placeholder="Título" required>
+                    <input type="text" id="txt_titulo" name="titulo" placeholder="Título" >
                     <small></small>
                 </div>
                 <div class="input">
                     <label>Animal:</label>
                     <div class="radio">
                         <label for="rdo_perro">Perro:</label>
-                        <input type="radio" name="transaccion" id="rdo_perro" value="perro" required>
+                        <input type="radio" name="transaccion" id="rdo_perro" value="perro" >
                         <small></small>
                         <label for="rdo_gato">Gato:</label>
-                        <input type="radio" name="transaccion" id="rdo_gato" value="gato" required>
+                        <input type="radio" name="transaccion" id="rdo_gato" value="gato" >
                         <small></small>
                     </div>
                 </div>
                 <div class="input">
                     <label for="txt_descripcion">Descripcion:</label>
-                    <input type="text" id="txt_descripcion" name="descripcion" placeholder="Descripcion" required>
+                    <input type="text" id="txt_descripcion" name="descripcion" placeholder="Descripcion" >
                     <small></small>
                 </div>
                 <div class="input">
                     <label for="txt_precio">Precio</label>
-                    <input type="number" name="precio" min="0" max="5000" id="txt_precio" placeholder="Precio" required>
+                    <input type="number" name="precio" min="0" max="5000" id="txt_precio" placeholder="Precio" >
                     <small></small>
                 </div>
 
                 <div class="caracteristicas">
                     <div class="input_caracteristicas">
                         <label class="input_element" for="txt_raza"><i class="material-icons">pets</i></label>
-                        <input class="input_element" type="text" name="raza" id="txt_raza" placeholder="Raza"
-                            required>
+                        <input class="input_element" maxlength="5" type="text" name="raza" id="txt_raza" placeholder="Raza"
+                            >
                         <small></small>
                     </div>
                     <div class="input_caracteristicas">
                         <label class="input_element" for="txt_fecha"><i
                                 class="material-icons">cruelty_free</i></label>
-                        <input class="input_element" type="date" name="fecha" id="txt_fecha" placeholder="dd/mm/aaaa" required>
+                        <input class="input_element" type="date" name="fecha" id="txt_fecha" placeholder="dd/mm/aaaa" >
                         <small></small>
                     </div>
                     <div class="input_caracteristicas">
                         <label class="input_element correcto" for="txt_vacuna"><i class="material-icons">vaccines</i></label>
-                        <select class="input_element" name="vacunas" id="txt_vacuna" placeholder="---Elegir--" required>
+                        <select class="input_element" name="vacunas" id="txt_vacuna"  >
+                            <option value="" disabled selected hidden>---Elegir--</option>
                             <option value="si">SI</option>
                             <option value="no">NO</option>
                         </select>

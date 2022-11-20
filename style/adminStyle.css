@@ -314,20 +314,7 @@ i{
     margin: 0 1rem 0 1rem;
 }
 
-.anuncio{
-    font-size: large;
-    color: rgb(235, 31, 31);
-    border-radius: 2rem;
-    border: red solid 2px;
-    padding: 4px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
-}
 
-#anunciosDinamicos
-{
-    visibility: hidden;
-    height: 0%;
-}
 
 /*
 Vallidaciones
@@ -349,5 +336,16 @@ Vallidaciones
   small {
     display: block;
   }
+  .anuncio{
+    display: flex;
+    color: aliceblue;
+    font-weight: bolder;
+    margin: 20px;
+    height: 40px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(223, 66, 66);
+}
   
  

@@ -13,9 +13,20 @@ export const validarEmail = (e) => {
     }
 };
 
+export const validarLongitudMaxima = (e)=>{
+    const input = e.target;
+    if(e.target.value)
+    {
+        input.value.trim().length<25? clearError(input) : setError(input, "Longitud maxima de 25 excedida");
+        
+    }
+    else{
+        setError(input, "Campo requerido");
+    }
+}
+
 export const validarPrecio = (e) => {    
     const input = parseInt( e.target.value);
-    console.log(input);
 
     if (input>=0 && input<5001 && input!=isNaN ) {
         clearError(e.target); 
@@ -54,12 +65,6 @@ export const validarExtension = (e) => {
         ? clearError(input)
         : setError(input, "Archivo invalido");
 
-    //console.log(nombre.split(".").pop());
-
-    /*
-      if (email.length > 6) {
-        pattern.test(email) ? clearError(input) : setError(input, "Email Invalido");
-      }*/
 };
 
 const validarLongitudMinima = (input, minimo) =>
