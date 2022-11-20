@@ -4,24 +4,59 @@ html,
 body {
     display: flex;
     font-family: 'Lato';
-    height: 100%;
     flex-direction: column;  
 }
-.card-body{
+.card-text
+{
+    color: aliceblue;
+    font-weight: bolder;
+}
+.card-head{
+    color: aliceblue;
+    justify-content: flex-start;
     display: flex;
-    font-size: small;
+    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    margin-top: 15px;
+}
+.card-head>div{
+    display: flex;
+    
+    color: aliceblue;
+    width: 100%;
+    flex-wrap: wrap;
+    
+    margin-top: 15px;
+}
+.card-body{
+    color: aliceblue;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    margin-top: 15px;
+}
+.card-footer{
+    color: aliceblue;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
     margin-top: 15px;
 }
 .botonAnuncio{
     background-color: #017fe5;
     display: flex;
-    justify-content: center;
     margin-top: 25px;
 }
 
+
+
 body{
     background-image: url("../img/fondolindo.jpg");
-    object-fit: fill;
     height: 100vh;
     width: 100vw;
 }
@@ -47,98 +82,85 @@ main {
     text-align: center;
 }
 
-fieldset {
-    padding: 5%;
-}
 
-#frm_altaAnuncios {
-    width: 80%;
-    min-width: 2rem;   
-    margin: auto;
-    text-align: left;
-    font-family: 'Lato';
-}
 
-fieldset {
-    background-color: white;
-}
 
-.input label {
-    display: block;
-}
 
-.caracteristicas {
-    display: flex;
-    justify-content: space-evenly;
 
-}
 
-.input_caracteristicas {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5%;
-}
 
 @media (max-width: 600px) {
 
-    .caracteristicas {
-        flex-direction: column;
+    #anunciosDinamicos{
+        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
-        width: 200px;
+        justify-content: center;
+    
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        min-width: 600px;
+        background-color: #017fe5;
+        margin: auto;
+        margin-top: 20px;
+        overflow-y: scroll;
+    }
+
+
+    .card-text
+    {
+        color: aliceblue;
+        font-weight: bolder;
+    }
+    .card-head{
+        color: aliceblue;
+        justify-content: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Courier New', Courier, monospace;
+       
+    }
+    .card-head>div{
+        display: flex;
+        
+        color: aliceblue;
+        width: 100%;
+        height: 30%;
+        flex-wrap: wrap;
+        
+    }
+    .card-body{
+        color: aliceblue;
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 11px;
+        margin-top: 15px;
+        height: 30%;
 
     }
-    .input {
-        width: 185px;
-        min-height: 1rem;
+    .card-footer{
+
+        height: 30%;
+
+        color: aliceblue;
+        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 11px;
+        margin-top: 15px;
     }
-    fieldset{
-        width: 200px;
+    .botonAnuncio{
+        background-color: #017fe5;
+        display: flex;
+        margin-top: 25px;
     }
-    h1{
-        font-size: small;
-        width: 200px;  
-        margin-left: 50px;   
-
-    }
+    
 }
 
-.input_element {
-    display: flex;
-    align-items: center;
-    height: 2vw;
-    margin: 0 1rem 0 1rem;
-}
-
-div input {
-    min-width: 6rem;
-    overflow-x: hidden;
-}
-.input_element :hover {
-    cursor: text;
-}
-
-.radio input, .radio label{    
-    width: 2rem;
-    display:inline-block; 
-    margin:0 50px 0 0px; 
-}
-input {
-    width: 100%;
-    border-radius: 0.8em;
-    background-color: gainsboro;
-    border: none;
-    min-height: 1rem;
-}
-.botones{
-    margin-top: 10px;
-}
-
-#listado {
-    width: 100%;
-    margin: auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
 
 button {
     padding: 0.5em 1em;
@@ -154,42 +176,6 @@ button:active {
     filter: brightness(80%);
 }
 
-#btn_form {
-
-    background-color: limegreen;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-button div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#btn_eliminar {
-    background-color: crimson;
-}
-
-#btn_cancelar {
-    background-color: dodgerblue;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    border: 1px solid black;
-}
-
-tr:hover {
-    filter: brightness(90%);
-    cursor: pointer;
-}
 
 #spinner {
     margin: auto;
@@ -201,9 +187,7 @@ tr:hover {
     width: 0%;
 }
 
-thead {
-    background-color: lightseagreen;
-}
+
 
 .colorPar {
     background-color: lightseagreen;
@@ -274,18 +258,18 @@ nav div {
 
 ul {
     list-style: none;
+
 }
 
 nav>ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
 }
 
 p {
     color: white;
     text-transform: uppercase;
-    letter-spacing: 10px;
 }
 
 a {
@@ -309,17 +293,6 @@ nav ul li a:hover {
 }
 
 
-.fotoRelacionada_container {
-   height: 300px;
-   margin-bottom: 25px;
-   visibility: hidden;
-}
-.fotoRelacionada_container img{
-    width:100%;
-    object-fit:cover;
-    height: 100%;    
-}
-
 footer{
     margin-top: 25px;
     visibility: hidden;
@@ -338,21 +311,30 @@ visibility: hidden;
 header end
 */
 
-i{
-    margin: 0 1rem 0 1rem;
-}
 
 #anunciosDinamicos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 20px;
     width: 80%;
     height: 80%;
+    min-width: 600px;
     background-color: #017fe5;
     margin: auto;
     margin-top: 20px;
-    visibility: visible;
+    overflow-y: scroll;
+
 }
 
 .anuncio{
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
     margin-top: 20px;
-    background-color: aqua;
+    padding: 25px;
+    background-color: rgb(6, 68, 68);
 }

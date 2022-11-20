@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./style/style.css">   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <script src="./scripts/index.js" type="module" defer></script>
-    <title>Primer Parcial tema 7</title>
+    <script src="./scripts/administracion.js" type="module" defer></script>
+    <title>Primer Parcial tema 5</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
             </nav>
         </header>
 
-        <div id="anunciosDinamicos">
+        <div id="anunciosDinamicos" style="display: flex;">
         </div>
 
         <h1 id="titulo">Administracion</h1>
@@ -60,10 +60,10 @@
                     <div class="radio">
                         <label for="rdo_perro">Perro:</label>
                         <input type="radio" name="transaccion" id="rdo_perro" value="perro" required>
+                        <small></small>
                         <label for="rdo_gato">Gato:</label>
                         <input type="radio" name="transaccion" id="rdo_gato" value="gato" required>
                         <small></small>
-
                     </div>
                 </div>
                 <div class="input">
@@ -126,7 +126,7 @@
                     </div>
                 </button>
 
-                <img src="./assets/spinner.svg" id="spinner">
+                <img src="./assets/Running dog.gif" id="spinner">
             </div>
             <span class="anuncio hidden"></span>
             <div id="listado">

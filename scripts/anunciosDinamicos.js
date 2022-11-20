@@ -1,7 +1,6 @@
 export default function imprimirAnuncios(lista) {
     if (lista != null) {
         var main = document.getElementById("anunciosDinamicos");
-        var div = [];
         for (var i = 0; i < lista.length; i++) {
             const objecto = lista[i];
             if (objecto.id != 0) {
@@ -11,6 +10,9 @@ export default function imprimirAnuncios(lista) {
     
                 var innerDiv = document.createElement("div");
                 innerDiv.setAttribute("class", "card-head");
+                var innerDivTitulo = document.createElement("div");
+                var innerDivDescripcion = document.createElement("div");
+                var innerDivPrecio = document.createElement("div");
 
                 var innerDiv2 = document.createElement("div");
                 innerDiv2.setAttribute("class", "card-body");
@@ -21,18 +23,21 @@ export default function imprimirAnuncios(lista) {
                 var titulo = document.createElement("h1");
                 titulo.textContent = objecto.titulo + " " + objecto.transaccion;
 
-                var descripcion = document.createElement("h1");
+                var descripcion = document.createElement("h3");
                 descripcion.textContent = objecto.descripcion;
 
                 var precio = document.createElement("p1");
                 precio.setAttribute("class", "card-text");
                 precio.textContent = "$" + objecto.precio;
 
-                crearCarasteristica(objecto, innerDiv2);
+                crearCarasteristica(objecto, innerDiv2, innerDiv3);
 
-                innerDiv.appendChild(titulo);
-                innerDiv.appendChild(descripcion);
-                innerDiv.appendChild(precio);
+                innerDiv.appendChild(innerDivTitulo);
+                innerDivTitulo.appendChild(titulo);
+                innerDiv.appendChild(innerDivDescripcion);
+                innerDivDescripcion.appendChild(descripcion);
+                innerDiv.appendChild(innerDivPrecio);
+                innerDivPrecio.appendChild(precio);
 
                 divPrincipal.appendChild(innerDiv);
                 divPrincipal.appendChild(innerDiv2);
@@ -41,12 +46,15 @@ export default function imprimirAnuncios(lista) {
             }
         }
 
-
+        return true;
+    }
+    else{
+        return false
     }
 }
 
 
-function crearCarasteristica(objecto, divAnuncios) {
+function crearCarasteristica(objecto, divAnuncios, divboton) {
 
     var div = document.createElement("div");
     var i = document.createElement("i");
@@ -54,6 +62,8 @@ function crearCarasteristica(objecto, divAnuncios) {
     i.innerHTML = "pets";
     var p = document.createElement("p");
     p.innerText = objecto.raza;
+
+
 
     var div2 = document.createElement("div");
     var i2 = document.createElement("i");
@@ -70,7 +80,7 @@ function crearCarasteristica(objecto, divAnuncios) {
     p3.innerText = objecto.vacuna;
 
 
-
+    var div4 = document.createElement("div");
     var boton = document.createElement("button");
     boton.innerText="VER MASCOTAS";
     boton.classList.add("botonAnuncio");
@@ -84,11 +94,12 @@ function crearCarasteristica(objecto, divAnuncios) {
     div2.appendChild(boton);
     div3.appendChild(i3);
     div3.appendChild(p3);
-    div3.appendChild(boton);
+    div4.appendChild(boton);
 
 
     divAnuncios.appendChild(div);
     divAnuncios.appendChild(div2);
     divAnuncios.appendChild(div3);
+    divboton.appendChild(div4);
 
 }

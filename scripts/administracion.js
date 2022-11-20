@@ -3,11 +3,15 @@ import Anuncio_Mascota from "./entidades/Anuncio_Mascota.js";
 import imprimirAnuncios from "./anunciosDinamicos.js";
 import {
     validarCampoVacio,
+    //  validarPrecio,
+} from "./entidades/validaciones.js";
+import {
+    // validarCampoVacio,
     validarPrecio,
 } from "./entidades/validaciones.js";
 
 
-const listado = JSON.parse(localStorage.getItem("Elementos")) || [new Anuncio_Mascota(0,0,0,0,0,0,0,0,0)];
+const listado = JSON.parse(localStorage.getItem("Elementos")) || [new Anuncio_Mascota(0, 0, 0, 0, 0, 0, 0, 0, 0)];
 const $tableContainer = document.getElementById("listado");
 const $form = document.forms[0];
 const $nav = document.getElementsByTagName("nav");
@@ -15,18 +19,18 @@ const $spinner = document.getElementById("spinner");
 const $styleSheet = document.getElementById("style");
 const $anuncio = document.querySelector(".anuncio");
 const { btn_editar, btn_eliminar, btn_cancelar } = $form;
+const{titulo,transaccion,descripcion, precio , raza , fecha, vacunas }= $form;
+
 let table;
 let _id = -1;
-console.log($form);
 
-if (listado.length > 0 && document.getElementById("listado")) {    
-    
+if (listado.length > 0 && document.getElementById("listado")) {
+
     actualizarTabla(listado)
         .then(() => $spinner.style.display = "none");
 }
 
-if(document.getElementById("anunciosDinamicos"))
-{
+if (document.getElementById("anunciosDinamicos")) {
     imprimirAnuncios(listado);
 }
 
@@ -92,16 +96,18 @@ $form.addEventListener("submit", e => {
 });
 
 
-$form.addEventListener("reset", e =>{
+
+$form.addEventListener("reset", e => {
     for (const iterator of $form) {
-        if(iterator.classList.contains("correcto"))
-        iterator.classList.remove("correcto");
+        if (iterator.classList.contains("correcto"))
+            iterator.classList.remove("correcto");
     }
 });
 
 //Envento cambio en el valor de los inputs
 $form.addEventListener("input", e => {
     const form = e.target;
+    console.log(form);
     switch (form.name) {
         case 'titulo':
             form.addEventListener("blur", validarCampoVacio);
@@ -109,26 +115,27 @@ $form.addEventListener("input", e => {
         case 'transaccion':
             console.log("transaccion");
             form.addEventListener("blur", validarCampoVacio);
-
+            break;
         case 'descripcion':
             form.addEventListener("blur", validarCampoVacio);
 
             console.log("descripcion");
-
+            break;
         case 'precio':
             form.addEventListener("blur", validarPrecio);
 
             console.log("precio");
-
+            break;
         case 'raza':
             form.addEventListener("blur", validarCampoVacio);
 
             console.log("raza");
+            break;
         case 'fecha':
 
             form.addEventListener("blur", validarCampoVacio);
             console.log("fecha");
-
+            break;
         case 'vacuna':
 
             form.addEventListener("blur", validarCampoVacio);
@@ -228,23 +235,23 @@ function inicializarCampos() {
 
 function validarEntrada() {
 
-    const form = $document.forms[0].elements;
+    const form = document.forms[0].elements;
     const elemento = listado[buscarPorId(listado, _id)];
     let inputCorrectos = 0;
     for (const iterator of form) {
-        if(iterator.classList.contains("correcto"))
-        inputCorrectos++;
-        
+        if (iterator.classList.contains("correcto"))
+            inputCorrectos++;
+
     }
-    let selectorTipo =document.getElementById("txt_vacuna").value;
-    if(selectorTipo=="si"||selectorTipo=="no")
-    {
+    let selectorTipo = document.getElementById("txt_vacuna").value;
+    if (selectorTipo == "si" || selectorTipo == "no") {
         inputCorrectos++;
     }
-    
-    if(inputCorrectos==7)
-    return true;
-    
+
+
+    if (inputCorrectos == 7)
+        return true;
+
     return false;
 }
 
